@@ -1,8 +1,16 @@
 {{-- <h1>Welcome to {{$users}}</h1> --}}
 <h2>User Page</h2>
 
+<h2>Form Page</h2>
 
+<form action="users" method="post">
+    @csrf
+    <input type="text" name="username" placeholder="Enter User Name"><br><br>
+    <input type="password" name="password" placeholder="Enter password"><br><br>
+    <button type="submit">Login</button>
+</form>
 
+{{--
 @if ($users == 'Sagan')
 <h1>Welcome to Users Page {{$user}}</h1>
 @else
@@ -15,4 +23,12 @@
 
 @foreach ($users as $user)
     <h3>{{$user}} </h3>
-@endforeach
+@endforeach --}}
+
+
+@include('inner')
+{{--
+<script>
+    var data=@json($users);
+    console.log(data);
+</script> --}}
